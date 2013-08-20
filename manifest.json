@@ -5,7 +5,7 @@
   "manifest_version": 2,
 
   "name": "Nevermore",
-  "description": "This extension adds hyperlinks for definitions to contracts on Edger",
+  "description": "This extension adds hyperlinks for definitions to contracts on EDGAR",
   "version": "1.0",
 
   "permissions": [

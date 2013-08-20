@@ -10,9 +10,13 @@ var unicodeForEntity = function(entityString) {
 
 var collectTermsToContext = function() {
     var termsToContext = {};
+
+    // FIXME: We should have a much more generic way to find terms than
+    // searching for <u> tags with quotes before or after them.
     var leftQuote = unicodeForEntity("&#147;");
     var rightQuote = unicodeForEntity("&#148;");
     var nodeList = document.getElementsByTagName('u');
+
     for (var i = 0; i < nodeList.length; ++i) {
         var uTag = nodeList[i];
         var previousText = uTag.previousSibling.textContent;
