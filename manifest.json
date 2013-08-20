@@ -1,0 +1,20 @@
+// Copyright (c) 2013 The SAYCBridge Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+{
+  "manifest_version": 2,
+
+  "name": "Nevermore",
+  "description": "This extension adds hyperlinks for definitions to contracts on Edger",
+  "version": "1.0",
+
+  "permissions": [
+    "http://www.sec.gov/"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://www.sec.gov/Archives/edgar/data/*htm"],
+      "js": ["nevermore.js"]
+    }
+  ]
+}
