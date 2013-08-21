@@ -2,19 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-var unicodeForEntity = function(entityString) {
-    var container = document.createElement("foo");
-    container.innerHTML = entityString;
-    return container.textContent[0];
-}
-
 var collectTermsToContext = function() {
     var termsToContext = {};
 
     // FIXME: We should have a much more generic way to find terms than
     // searching for <u> tags with quotes before or after them.
-    var leftQuote = unicodeForEntity("&#147;");
-    var rightQuote = unicodeForEntity("&#148;");
+    var leftQuote = "\u201C";
+    var rightQuote = "\u201D";
     var nodeList = document.getElementsByTagName('u');
 
     for (var i = 0; i < nodeList.length; ++i) {
