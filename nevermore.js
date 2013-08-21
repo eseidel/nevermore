@@ -33,6 +33,7 @@ var walkTextNodes = function(node, callback) {
         else if (node.nodeType == Node.ELEMENT_NODE)
             walkTextNodes(node, callback);
         node = node.nextSibling;
+        // What about shadow DOM?
     }
 }
 
@@ -71,7 +72,7 @@ var underlineTerms = function(termsToContext) {
             var endIndex = startIndex + term.length;
 
             // We're only looking for whole words.
-            if (startIndex > 0 && text[startIndex - 1] != " ")
+            if (startIndex > 0 && text[startIndex - 1] != " ") // FIXME: What about tabs, periods, etc?
                 continue;
             if ((endIndex < text.length) && text[endIndex] != " ")
                 continue;
